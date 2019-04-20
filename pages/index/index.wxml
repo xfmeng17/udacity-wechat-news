@@ -1,0 +1,15 @@
+<scroll-view scroll-x>
+  <view class="channel-list">
+    <view class="channel-item" wx:for="{{channelArr}}" wx:key="value"
+    bindtap="changeChannel" data-channel="{{item.value}}">
+      <view class="channel-title">{{item.label}}</view>
+      <view class="channel-underline" wx:if="{{item.value == currChannel}}"></view>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="news-wrapper">
+  <view class="news-panel" wx:for="{{[0,1,2,3,4,5,6]}}">
+    YYYYYYYYYYYY
+  </view>
+</view>
