@@ -9,15 +9,18 @@
 </scroll-view>
 
 <view class="news-wrapper">
-  <!-- <view class="news-top">
-    TODO
-  </view> -->
   <view class="news-panel" wx:for="{{newsList}}" wx:key="item.id"
   bindtap="onTapNews" data-news-id="{{item.id}}">
     <view class="news-panel-text">
       <view class="">{{item.title}}</view>
       <view class="news-panel-source">{{item.source}} {{item.time}}</view>
     </view>
-    <image class="news-panel-picture" src="{{item.firstImage}}"></image>
+    <image wx:if="{{item.firstImage}}"
+    class="news-panel-picture" src="{{item.firstImage}}">
+    </image>
+    <image wx:else
+    class="news-panel-picture" src="/images/default.png">
+    </image>
+
   </view>
 </view>
