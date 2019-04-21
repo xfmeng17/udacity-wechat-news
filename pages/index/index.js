@@ -1,5 +1,3 @@
-const DEFAULT_IMAGE_PATH = '//inews.gtimg.com/newsapp_bt/0/8116302979/641'
-
 Page({
   data: {
     channelArr: [
@@ -37,8 +35,8 @@ Page({
           let hour = (date.getHours() < 10 ? '0' : '') + date.getHours()
           let minute = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes()
           item.time = hour + ':' + minute 
-          if (item.firstimage == '') {
-            item.firstimage = DEFAULT_IMAGE_PATH
+          if (!item.firstImage || item.firstImage == '') {
+            item.firstImage = '/images/default.png'
           }
         })
         this.setData({

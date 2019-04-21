@@ -15,12 +15,6 @@
       <view class="">{{item.title}}</view>
       <view class="news-panel-source">{{item.source}} {{item.time}}</view>
     </view>
-    <image wx:if="{{item.firstImage}}"
-    class="news-panel-picture" src="{{item.firstImage}}">
-    </image>
-    <image wx:else
-    class="news-panel-picture" src="/images/default.png">
-    </image>
-
+    <image class="news-panel-picture" src="{{item.firstImage}}"></image>
   </view>
 </view>
