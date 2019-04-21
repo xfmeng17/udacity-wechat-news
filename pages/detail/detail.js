@@ -1,66 +1,44 @@
-// pages/detail/detail.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    newsId: '',
+    newsDetail: {},
+    newsContent: []
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad (options) {
+    let newsId = options.newsId
+    this.setData({
+      newsId: newsId
+    })
+    this.getNewsDetail()
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onPullDownRefresh () {
+    this.getNewsDetail(() => {
+      wx.stopPullDownRefresh()
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  getNewsDetail (callback) {
+    wx.request({
+      url: 'https://test-miniprogram.com/api/news/detail',
+      data: {
+        id: this.data.newsId,
+      },
+      success: res => {
+        let result = res.data.result
+        this.formatNewsDetail(result)
+      },
+      complete: () => {
+        callback && callback()
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  formatNewsDetail (result) {
+    let date = new Date(result.date);
+    let hour = (date.getHours() < 10 ? '0' : '') + date.getHours()
+    let minute = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes()
+    result.time = hour + ':' + minute
+    this.setData({
+      newsDetail: result,
+      newsContent: result.content
+    })
   }
 })

@@ -7,15 +7,15 @@ Page({
       { value: 'yl', label: '娱乐' },
       { value: 'js', label: '军事' },
       { value: 'ty', label: '体育' },
-      { value: 'other', label: '其他' },
+      { value: 'other', label: '其他' }
     ],
     channel: 'gn',
-    newsList: [],
+    newsList: []
   },
   onLoad () {
     this.getNewsList()
   },
-  onTapChannel(e) {
+  onTapChannel (e) {
     let channel = e.currentTarget.dataset.channel
     this.setData({
       channel: channel
@@ -35,14 +35,7 @@ Page({
           let hour = (date.getHours() < 10 ? '0' : '') + date.getHours()
           let minute = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes()
           item.time = hour + ':' + minute 
-          let source = item.source.split('/')
-          item.cp = source.length > 0 ? source[0] : item.source
-          let firstImage = item.firstImage
-          if (item.firstImage.indexOf('http:') == -1) {
-            item.firstImage = 'https:' + item.firstImage
-          }
         })
-        console.log(result)
         this.setData({
           newsList: result
         })
@@ -57,4 +50,10 @@ Page({
       wx.stopPullDownRefresh()
     })
   },
+  onTapNews (e) {
+    let newsId = e.currentTarget.dataset.newsId
+    wx.navigateTo({
+      url: '/pages/detail/detail?newsId=' + newsId,
+    })
+  }
 })

@@ -10,12 +10,13 @@
 
 <view class="news-wrapper">
   <!-- <view class="news-top">
-    QWER
+    TODO
   </view> -->
-  <view class="news-panel" wx:for="{{newsList}}" wx:key="item.id">
+  <view class="news-panel" wx:for="{{newsList}}" wx:key="item.id"
+  bindtap="onTapNews" data-news-id="{{item.id}}">
     <view class="news-panel-text">
       <view class="">{{item.title}}</view>
-      <view class="">{{item.cp}} {{item.time}}</view>
+      <view class="">{{item.source}} {{item.time}}</view>
     </view>
     <image class="news-panel-picture" src="{{item.firstImage}}"></image>
   </view>

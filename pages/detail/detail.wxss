@@ -1,1 +1,25 @@
-/* pages/detail/detail.wxss */
+.news-detail-head {
+  padding: 30rpx;
+}
+.news-detail-title {
+  font-size: 50rpx;
+  line-height: 70rpx;
+}
+.news-detail-source {
+  font-size: 30rpx;
+  line-height: 42rpx;
+  margin-top: 10rpx;
+  margin-right: 10rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.news-detail-body {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-bottom: 30rpx;
+  font-size: 35rpx;
+  line-height: 49rpx;
+}
+.news-detail-partion {
+  margin-top: 20rpx;
+}

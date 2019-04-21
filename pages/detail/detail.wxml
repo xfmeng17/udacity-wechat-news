@@ -1,2 +1,13 @@
-<!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+<view class="news-detail-head">
+  <view class="news-detail-title">{{newsDetail.title}}</view>
+  <view class="news-detail-source">
+    <view>{{newsDetail.source}} {{newsDetail.time}}</view>
+    <view>阅读 {{newsDetail.readCount}}</view>
+  </view>
+</view>
+<view class="news-detail-body">
+  <view class="news-detail-partion" wx:for="{{newsContent}}" wx:key="item.id">
+    <view wx:if="{{item.type == 'p'}}">{{item.text}}</view>
+    <image wx:if="{{item.type == 'image'}}" src="{{item.src}}"></image>
+  </view>
+</view>
