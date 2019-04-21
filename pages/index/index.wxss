@@ -1,60 +1,57 @@
 .channel-list {
+  height: 80rpx;
   display: flex;
-  height: 60rpx;
+  justify-content: space-around;
   background: #6399FF;
 }
-
 .channel-item {
   display: flex;
-  width: 120rpx;
-  flex-shrink: 0;
   flex-direction: column;
   align-items: center;
 }
-
-.channel-title {
-  font-size: 30rpx;
-  line-height: 42rpx;
+.channel-bar {
+  font-size: 40rpx;
+  line-height: 56rpx;
 }
-
 .channel-underline {
-  height: 5rpx;
+  height: 10rpx;
   width: 40rpx;
   margin-top: 5rpx;
   background-color: #D8D8D8;
 }
-
 .news-wrapper {
   display: flex;
   flex-direction: column;
 }
-
 .news-top {
   height: 280rpx;
   margin: 2rpx;
   border: 1rpx solid #D8D8D8
 }
-
 .news-panel {
   display: flex;
-  height: 200rpx;
-  margin: 2rpx;
-  border-bottom: 1rpx solid #D8D8D8
+  height: 250rpx;
+  margin: 10rpx;
+  border-bottom: 2rpx solid #D8D8D8
 }
 
 .news-panel-text {
-  font-size: 30rpx;
+  font-size: 40rpx;
+  line-height: 56rpx;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 180rpx;
+  height: 240rpx;
   width: 65%;
   margin: 5rpx;
 }
-
+.news-panel-source {
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
 .news-panel-picture {
   display: flex;
-  height: 180rpx;
+  height: 240rpx;
   width: 35%;
   margin: 5rpx;
 }

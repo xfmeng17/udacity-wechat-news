@@ -2,12 +2,12 @@
   padding: 30rpx;
 }
 .news-detail-title {
-  font-size: 50rpx;
-  line-height: 70rpx;
+  font-size: 60rpx;
+  line-height: 84rpx;
 }
 .news-detail-source {
-  font-size: 30rpx;
-  line-height: 42rpx;
+  font-size: 35rpx;
+  line-height: 49rpx;
   margin-top: 10rpx;
   margin-right: 10rpx;
   display: flex;
@@ -17,8 +17,8 @@
   padding-left: 30rpx;
   padding-right: 30rpx;
   padding-bottom: 30rpx;
-  font-size: 35rpx;
-  line-height: 49rpx;
+  font-size: 50rpx;
+  line-height: 70rpx;
 }
 .news-detail-partion {
   margin-top: 20rpx;
