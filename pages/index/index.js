@@ -10,6 +10,7 @@ Page({
       { value: 'other', label: '其他' }
     ],
     channel: 'gn',
+    newsBanner: {},
     newsList: []
   },
   onLoad () {
@@ -40,7 +41,8 @@ Page({
           }
         })
         this.setData({
-          newsList: result
+          newsBanner: result[0],
+          newsList: result.slice(1)
         })
       },
       complete: () => {

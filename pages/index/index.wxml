@@ -9,6 +9,13 @@
 </scroll-view>
 
 <view class="news-wrapper">
+  <view class="news-panel-banner">
+    <image class="news-banner" src="{{newsBanner.firstImage}}"
+    mode="scaleToFill" bindtap="onTapNews" data-news-id="{{newsBanner.id}}">
+    </image>
+    <view class="banner-title">{{newsBanner.title}}</view>
+    <view class="banner-source">{{newsBanner.source}} {{newsBanner.time}}</view>
+  </view>
   <view class="news-panel" wx:for="{{newsList}}" wx:key="item.id"
   bindtap="onTapNews" data-news-id="{{item.id}}">
     <view class="news-panel-text">
