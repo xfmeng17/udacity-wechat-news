@@ -32,13 +32,16 @@ Page({
       success: res => {
         let result = res.data.result
         result.forEach(item => {
-          let date = new Date(item.date);
-          let hour = (date.getHours() < 10 ? '0' : '') + date.getHours()
-          let minute = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes()
-          item.time = hour + ':' + minute 
-          if (!item.firstImage || item.firstImage == '') {
+          if (!item.firstImage || item.firstImage === '') {
             item.firstImage = '/images/default.png'
           }
+          if (!item.source || item.source === '') {
+            item.source = '咕咕快讯'
+          }
+          let date = item.date ? new Date(item.date) : new Date();
+          let hour = (date.getHours() < 10 ? '0' : '') + date.getHours()
+          let minute = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes()
+          item.time = hour + ':' + minute
         })
         this.setData({
           newsBanner: result[0],
